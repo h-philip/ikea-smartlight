@@ -32,7 +32,7 @@ coap = '/usr/local/bin/coap-client'
 def tradfri_get_devices(hubip, clientid, securityid):
     """ function for getting all tradfri device ids """
     tradfriHub = 'coaps://{}:5684/15001' .format(hubip)
-    api = '{} -m get -u "{}" -k "{}" "{}" | awk \'NR==4\'' .format(coap, securityid,
+    api = '{} -m get -u "{}" -k "{}" "{}" | awk \'NR==4\'' .format(coap, clientid, securityid,
                                                                                 tradfriHub)
 
     if os.path.exists(coap):
